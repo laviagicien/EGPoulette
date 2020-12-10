@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    background: url('../src/assets/brique.png') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+}

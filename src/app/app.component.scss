@@ -1,0 +1,23 @@
+@font-face {
+    font-family : 'neon';
+    src: url('../assets/font/NEON\ ABSOLUTE\ SANS1.ttf')
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.display {
+    margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+    p{
+        font-family: 'neon';
+        font-size: 10em;
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+                     0 0 15px #9900ff, 0 0 20px #9900ff,
+                     0 0 25px #9900ff, 0 0 30px #9900ff,
+                     0 0 35px #9900ff,;
+    }
+}
