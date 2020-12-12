@@ -1,0 +1,17 @@
+@font-face {
+    font-family : 'lcd';
+    src: url('../../assets/font/LED\ LCD\ 123.ttf')
+}
+
+.titleTxt {
+    font-family: 'lcd';
+    font-size: 2.5em;
+    fill: #00F9C9;
+}
+
+.msgTxt {
+    font-family: 'lcd';
+    font-size: 3em;
+    color: #00F9C9;
+    vertical-align: middle;
+}
