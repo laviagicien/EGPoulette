@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MsgBoxComponent } from './msg-box/msg-box.component';
 import { AdminComponent } from './admin/admin.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainPageComponent } from './main-page/main-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CountdownModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

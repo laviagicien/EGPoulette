@@ -1,3 +1,4 @@
+// Design stuff
 @font-face {
     font-family : 'lcd';
     src: url('../../assets/font/LED\ LCD\ 123.ttf')
@@ -6,12 +7,37 @@
 .titleTxt {
     font-family: 'lcd';
     font-size: 2.5em;
-    fill: #00F9C9;
+    fill: #95fbff;
 }
 
 .msgTxt {
     font-family: 'lcd';
     font-size: 3em;
-    color: #00F9C9;
-    vertical-align: middle;
+    color: #95fbff;
+    text-shadow: black 0px 0px 1px;
+    text-shadow: black 0px 0px 2px;
+    text-shadow: black 0px 0px 3px;
+    text-shadow: black 0px 0px 5px;
+    text-shadow: black 0px 0px 7px;
+    text-shadow: black 0px 0px 10px;
+    text-shadow: black 0px 0px 15px;
+    text-shadow: black 0px 0px 20px;
+    text-shadow: black 0px 0px 25px;
+    text-shadow: black 0px 0px 30px;
+    
+}
+//Animation stuff
+
+.transition {
+    position: absolute;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    transform: scale(0);
+    transition: 1s ease-out;
+}
+
+.reveal {
+    transform: scale(1);
 }

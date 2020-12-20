@@ -26,6 +26,7 @@
     "d3plus-text": "^0.10.1",
     "express": "^4.17.1",
     "express-history-api-fallback": "^2.2.1",
+    "ngx-countdown": "^11.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

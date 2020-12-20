@@ -1,1 +1,12 @@
-<app-msg-box></app-msg-box>
+<!-- <video src="../../assets/video/Ma_video1.mov" 
+       type="video/quicktime"
+       autoplay="autoplay" loop="loop" muted="muted" playsinline></video> -->
+       <div class="cdContainer">
+              <countdown #cd [config]="{
+                     leftTime: 3600,
+                     format: 'mm:ss',
+                     demand: true
+                   }" (event)="handleEvent($event)" class="digital"></countdown>
+       </div>
+
+<app-msg-box style="z-index: 10;"></app-msg-box>

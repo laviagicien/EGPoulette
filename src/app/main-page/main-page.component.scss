@@ -1,0 +1,20 @@
+@font-face {
+    font-family: digit;
+    src: url('../../assets/font/Digit.TTF');
+}
+
+.digital {
+    display: inline-block;
+    font-family: 'digit';
+    font-size: 10em;
+    color: #00F9C9;
+
+}
+
+.cdContainer {
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 1;
+
+}
