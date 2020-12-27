@@ -15,6 +15,7 @@
 
 .msgArea {
     display: block;
+    resize: none;
     margin: 0 auto;
     width: 90%;
     height: 100%;
@@ -24,6 +25,7 @@
     font-size: 2em;
     border-radius: 5% / 5%;
     background-color: rgba($color: #95fbff, $alpha: 0.25);
+    text-align: center;
 }
 
 .btn{
@@ -45,6 +47,10 @@
     font-size: 2em;
     border-radius: 5% / 5%;
     background-color: rgba($color: #95fbff, $alpha: 0.25);
+
+    &:active {
+        background-color: rgba($color: #7b64ff, $alpha: 0.25); 
+    }
 }
 
 .p1 {

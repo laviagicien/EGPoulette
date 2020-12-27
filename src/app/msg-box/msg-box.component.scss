@@ -8,11 +8,15 @@
     font-family: 'lcd';
     font-size: 2.5em;
     fill: #95fbff;
+    font-weight: bolder;
 }
 
 .msgTxt {
+    display: table;
+    height: 600px;
     font-family: 'lcd';
     font-size: 3em;
+    font-weight: bold;
     color: #95fbff;
     text-shadow: black 0px 0px 1px;
     text-shadow: black 0px 0px 2px;
@@ -36,6 +40,11 @@
     z-index: 10;
     transform: scale(0);
     transition: 1s ease-out;
+}
+
+.divTxt {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .reveal {
