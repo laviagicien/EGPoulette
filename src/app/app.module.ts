@@ -7,6 +7,14 @@ import { MsgBoxComponent } from './msg-box/msg-box.component';
 import { AdminComponent } from './admin/admin.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CountdownModule } from 'ngx-countdown';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io'
+
+const config: SocketIoConfig = { 
+  url: 'http://localhost:3000', 
+  options: {
+    transports: ['websocket']
+  } 
+};
 
 @NgModule({
   declarations: [
@@ -18,9 +26,12 @@ import { CountdownModule } from 'ngx-countdown';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CountdownModule
+    CountdownModule,
+    SocketIoModule.forRoot(config)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

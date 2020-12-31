@@ -1,9 +1,9 @@
 <div class="container">
     <div class="txtarea">
-        <textarea name="msg" id="msg" class="msgArea"></textarea>
+        <textarea name="msg" id="msg" class="msgArea" #msg></textarea>
     </div> 
     <div class="btn">
-        <button class="pushbtn">
+        <button class="pushbtn" (click)="sendMsg()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
                  fill="black" width="90px" height="90px">
                  <path class="p0" d="M0 0h24v24H0z" fill="none"/>

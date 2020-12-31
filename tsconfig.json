@@ -21,12 +21,16 @@
       "dom"
     ],
     "paths": {
+      "rxjs": ["node_modules/rxjs"],
       "d3": [
         "dist/d3/d3",
         "dist/d3"
       ]
-    }
+    },
+    "esModuleInterop": true
+
   },
+  "allowSyntheticDefaultImports": true,
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

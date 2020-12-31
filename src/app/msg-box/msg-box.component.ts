@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Howl, Howler } from 'howler';
+import { Socket } from 'ngx-socket-io';
 
 @Component({
   selector: 'app-msg-box',
@@ -13,17 +14,25 @@ export class MsgBoxComponent implements OnInit {
     src: ['../../assets/audio/popUpSound.wav'],
     volume: 1.0
   });
-  
-  constructor() { }
 
-  ngOnInit(): void {
-    this.showMessage();
+  message: string;
+  
+  constructor(private socket: Socket) {
   }
 
-  async showMessage() {
+  ngOnInit(): void {
+    this.socket.connect();
+
+    this.socket.fromEvent('message').subscribe((message: any) => {
+      this.showMessage(message);
+    })
+  }
+
+  async showMessage(msg:string) {
+    this.message = msg;
     const msgContainer = <HTMLElement>document.getElementById('msgContainer');
     this.popUpSound.play();
-    await this.delay(1000);
+    await this.delay(500);
     msgContainer.classList.toggle('reveal');
     await this.delay(60000);
     msgContainer.classList.toggle('reveal');
