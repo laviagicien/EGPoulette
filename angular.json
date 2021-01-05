@@ -33,7 +33,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "howler",
+              "socket.io-client"
+            ]
           },
           "configurations": {
             "production": {

@@ -7,9 +7,6 @@ const path = require('path');
 // Using fallback to allow angular routing
 const fallback = require('express-history-api-fallback');
 
-// Importing socket.io
-const socketIO = require('socket.io')
-
 // Starting express server and redirect to index.html
 app.use(express.static(__dirname + '/dist/EGPoulette/'))
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '/dist/EGPoulette/index.html')));
@@ -17,14 +14,15 @@ app.use(fallback(__dirname + '/dist/EGpoulette/index.html'));
 const server = http.createServer(app);
 
 //IO stuff
+const socketIO = require('socket.io')
 const io = socketIO(server, {
-  transports: ['websocket'],
-  cors: {
-    origin: '*'
-  }
+  transports: ['websocket']
 });
-io.on('connect', (socket) => {
+io.on('connection', (socket) => {
   console.log('user connected');
+  socket.on('connect_error', function(err) {
+    console.log('connect error',err);
+  });
   socket.on('new-message', (msg) => {
     console.log(msg)
     io.emit('message', msg);

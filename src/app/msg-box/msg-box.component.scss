@@ -14,12 +14,13 @@
 .msgTxt {
     display: table;
     height: 600px;
+    width: 1450px;
     font-family: 'lcd';
     font-size: 3em;
     font-weight: bold;
     color: #95fbff;
-    text-shadow: black 0px 0px 1px;
-    text-shadow: black 0px 0px 2px;
+    text-shadow: black 1px 1px 1px;
+    text-shadow: black 1px 1px 2px;
     text-shadow: black 0px 0px 3px;
     text-shadow: black 0px 0px 5px;
     text-shadow: black 0px 0px 7px;
@@ -45,6 +46,7 @@
 .divTxt {
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
 }
 
 .reveal {

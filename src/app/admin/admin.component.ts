@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
-
+import { io } from 'socket.io-client/build/index';
 
 @Component({
   selector: 'app-admin',
@@ -9,11 +8,16 @@ import { Socket } from 'ngx-socket-io';
 })
 export class AdminComponent implements OnInit {
   @ViewChild('msg') msg: ElementRef;
+  private socket: any;
 
-  constructor(private socket: Socket) { }
+  constructor() { 
+    this.socket = io('http://localhost:3000', {
+      transports: ['websocket']
+    });
+  }
 
   ngOnInit(): void {
-    this.socket.connect();
+
   }
 
   sendMsg() {

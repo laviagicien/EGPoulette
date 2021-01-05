@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Howl, Howler } from 'howler';
-import { Socket } from 'ngx-socket-io';
+import { io } from 'socket.io-client/build/index';
+
 
 @Component({
   selector: 'app-msg-box',
@@ -15,17 +16,24 @@ export class MsgBoxComponent implements OnInit {
     volume: 1.0
   });
 
-  message: string;
+  message: string = 'lorem ipsum dolor sit amet';
+
+  socket: any;
   
-  constructor(private socket: Socket) {
+  constructor() {
+    this.socket = io('http://localhost:3000', {
+      transports: ['websocket']
+    });
   }
 
   ngOnInit(): void {
-    this.socket.connect();
-
-    this.socket.fromEvent('message').subscribe((message: any) => {
-      this.showMessage(message);
+  
+    this.socket.on('message', (msg: any) => {
+      this.showMessage(msg)
     })
+
+    this.popUpSound.load()
+    
   }
 
   async showMessage(msg:string) {
