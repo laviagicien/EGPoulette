@@ -12,7 +12,7 @@ export class MsgBoxComponent implements OnInit {
 
   delay = async (ms: number) => new Promise(res => setTimeout(res, ms));
   popUpSound = new Howl({
-    src: ['../../assets/audio/msn-wizz-sound.mp3'],
+    src: ['../../assets/audio/among-us.mp3'],
     volume: 1.0
   });
 

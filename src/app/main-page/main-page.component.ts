@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CountdownComponent } from 'ngx-countdown';
-import SmokeMachine from '@bijection/smoke'
+// import SmokeMachine from '@bijection/smoke'
 
 @Component({
   selector: 'app-main-page',
@@ -17,7 +17,7 @@ export class MainPageComponent implements OnInit {
   ngAfterViewInit() {
     this.countdown.begin();
 
-    const bottom = window.innerHeight;
+   /*  const bottom = window.innerHeight;
     const midWidth = window.innerWidth / 4;
     
     const canvas = <HTMLCanvasElement>document.getElementById('smoke');
@@ -26,7 +26,7 @@ export class MainPageComponent implements OnInit {
     const party = SmokeMachine(ctx, [255, 255, 255])
 
     party.start();
-    party.addSmoke(midWidth, bottom, 100)
+    party.addSmoke(midWidth, bottom, 100) */
   }
 
 }
