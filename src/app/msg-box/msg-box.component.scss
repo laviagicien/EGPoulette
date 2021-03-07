@@ -7,8 +7,18 @@
 .titleTxt {
     font-family: 'lcd';
     font-size: 2.5em;
-    fill: #95fbff;
+    fill: #FFEB7A;
     font-weight: bolder;
+    text-shadow: black 1px 1px 1px;
+    text-shadow: black 1px 1px 2px;
+    text-shadow: black 0px 0px 3px;
+    text-shadow: black 0px 0px 5px;
+    text-shadow: black 0px 0px 7px;
+    text-shadow: black 0px 0px 10px;
+    text-shadow: black 0px 0px 15px;
+    text-shadow: black 0px 0px 20px;
+    text-shadow: black 0px 0px 25px;
+    text-shadow: black 0px 0px 30px;
 }
 
 .msgTxt {
@@ -18,7 +28,7 @@
     font-family: 'lcd';
     font-size: 3em;
     font-weight: bold;
-    color: #95fbff;
+    color:#FFEB7A;
     text-shadow: black 1px 1px 1px;
     text-shadow: black 1px 1px 2px;
     text-shadow: black 0px 0px 3px;
