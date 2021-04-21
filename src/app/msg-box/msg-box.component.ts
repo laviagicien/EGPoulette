@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Howl, Howler } from 'howler';
 import { io } from 'socket.io-client/build/index';
 
@@ -9,7 +9,7 @@ import { io } from 'socket.io-client/build/index';
   styleUrls: ['./msg-box.component.scss']
 })
 export class MsgBoxComponent implements OnInit {
-
+  
   delay = async (ms: number) => new Promise(res => setTimeout(res, ms));
   popUpSound = new Howl({
     src: ['../../assets/audio/among-us.mp3'],
@@ -21,8 +21,9 @@ export class MsgBoxComponent implements OnInit {
   socket: any;
   
   constructor() {
-    this.socket = io('http://localhost:3000', {
-      transports: ['websocket']
+    this.socket = io('ws://laviagicien.freeboxos.fr', {
+      transports: ['websocket'],
+      forceNew: true
     });
   }
 
@@ -42,7 +43,7 @@ export class MsgBoxComponent implements OnInit {
     this.popUpSound.play();
     await this.delay(500);
     msgContainer.classList.toggle('reveal');
-    await this.delay(60000);
+    await this.delay(40000);
     msgContainer.classList.toggle('reveal');
   }
 }

@@ -9,24 +9,27 @@ import { CountdownComponent } from 'ngx-countdown';
 })
 export class MainPageComponent implements OnInit {
   @ViewChild('cd', {static: false}) private countdown: CountdownComponent;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-    this.countdown.begin();
-
-   /*  const bottom = window.innerHeight;
-    const midWidth = window.innerWidth / 4;
     
-    const canvas = <HTMLCanvasElement>document.getElementById('smoke');
-    const ctx = canvas.getContext('2d');
+  }
 
-    const party = SmokeMachine(ctx, [255, 255, 255])
-
-    party.start();
-    party.addSmoke(midWidth, bottom, 100) */
+  playVideo() {
+    let container = document.getElementById('containerVideo');
+    let video = <HTMLVideoElement>document.getElementById('video');
+    let button = <HTMLButtonElement>document.getElementById('button')
+    button?.style.display = "none";
+    video.volume = 1;
+    video.play();
+    video.onended = () => { 
+      container?.classList.add('disapear');
+      this.countdown.begin();
+    }
   }
 
 }

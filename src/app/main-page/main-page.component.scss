@@ -10,20 +10,62 @@
     color: #00F9C9;
 
 }
+.wrap {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+}
 
 .cdContainer {
-    margin-top: 50vh;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
     text-align: center;
     z-index: 5;
 
 }
 
-#smoke {
-    position: fixed;
-    top: 0;
-    left: 0;
+.container {
+    display: flex;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 6;
+    transform: scale(1);
+    transition: 2s ease-in-out;
+}
+
+.vid {
     width: 100%;
-    height: 100%;
-    z-index: 2;
+}
+
+.c-video {
+    width: 90%;
+    .button {
+        position: absolute;
+        width: 288px;
+        height: 288px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        cursor: pointer;
+        svg {
+            fill :#00F9C9;
+        }
+
+        &:hover {
+            svg {
+                fill : rgba(0,249,201, 0.50)
+            }
+        }
+    }
+}
+
+.disapear {
+    transform: scale(0);
+
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
 import { io } from 'socket.io-client/build/index';
 
 @Component({
@@ -8,11 +8,13 @@ import { io } from 'socket.io-client/build/index';
 })
 export class AdminComponent implements OnInit {
   @ViewChild('msg') msg: ElementRef;
+
   private socket: any;
 
   constructor() { 
-    this.socket = io('http://localhost:3000', {
-      transports: ['websocket']
+    this.socket = io('ws://laviagicien.freeboxos.fr', {
+      transports: ['websocket'], 
+      forceNew: true
     });
   }
 
